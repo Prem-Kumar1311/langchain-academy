@@ -1,0 +1,37 @@
+Memory Types:
+ConversationBufferMemory:
+This memory allows for storing of messages and then extracts the message in a variable.
+ConversationBufferWindowMemory:
+This memory keeps a list of the interactions of the conversation over time.It only uses the last K interactions.
+ConversationTokenBufferMemory:
+This memory keeps a buffer of recent interactions in memory, and uses token length rathen than number of interactions to determine when to flush interactions.
+ConversationSummaryMemory:
+This memory creates a summary of the conversation over time.
+
+Additional Memory Types:
+Vector Data Memory:
+Stores text(from conversation or elsewhere) in a vector database and retrieves the most recent block of text.
+Entity Memory:
+Using an LLM,it remembers details about specific entities.
+Multiple memories can also be used at one time. Ex- Conversation memory + Entity memory to recall individuals.
+
+Embeddings:
+Embeddings create numerical representation for pieces of text.Texts with similar content will have similar vectors.
+Vecor Database:
+A vector database is a way to store the vector representations.
+Agent:
+Agent in langchain is a combination of a language model and a tool or set of tools that can be used to interact with real world.
+Ex:Virtual Assistant named X:
+This virtual assistant can interact with users to list out nearby restaurants based on geolocation tool to identify user location and recommend them.And based on this user can ask assistant to order food and X can use food delivery app to place an order.
+In this way,assistant has used tools such as geolocation tool to indetify location and food delivery API to place order, thus doing multiple tasks using tools.
+
+Chains are a fixed control flow defined by developer whereas agent is a LLM defined control flow.
+Types of Chains:
+LLMChain
+Sequential Chains
+	SimpleSequentialChain
+	SequentialChain
+Router Chain
+
+LangGraph is used to balance reliability with control.
+LangGraph state schema can be defined using different ways such as TypeDict,DataClasses or Pydantic.Pydantic provides flexibility of validating the data.
